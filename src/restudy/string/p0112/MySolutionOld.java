@@ -2,7 +2,7 @@ package restudy.string.p0112;
 
 import java.util.Scanner;
 
-public class mySolutionOld {
+public class MySolutionOld {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);

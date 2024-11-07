@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 //나름 최대한 조건문 적게 쓰려고 했는데.. 이 방법 밖에 없나..?
 //강의는 나보다 좀 더 컴팩트하게 품, 1. 비기는 경우 2. A가 이기는 경우 3. A가 지는 경우
-//코드 치기 전에, 예시를 좀 더 꼼꼼하게 분석하자.
+//코드 치기 전에, 예시를 좀 더 철저하게 분석하고 들어가자.
 
 public class P0203 {
     public static void main(String[] args) {

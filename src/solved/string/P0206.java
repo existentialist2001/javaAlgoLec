@@ -1,8 +1,10 @@
-import java.util.*;
+package solved.string;
+
+import java.util.Scanner;
 
 //너무 지저분하게 풀었는데..
 
-public class Main {
+public class P0206 {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
