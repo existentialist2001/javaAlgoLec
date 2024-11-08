@@ -1,8 +1,17 @@
-package solved.string;
+package restudy.array.p0206;
 
 import java.util.Scanner;
 
-public class P0206 {
+/*풀면서 내 풀이가 너무 지저분하다고 생각했다.
+강의는,
+1)내 풀이처럼 String, StringBuilder를 사용하지 않고 int만으로 숫자를 뒤집었고,
+2)소수 판별에 있어 에라토스테네스 체를 사용할 줄 알았는데 그냥 자기 전까지의 수들로 나누어 판별했다.
+그도 그럴 것이, 에라토스테네스 체는 특정 숫자 하나의 소수 판별이 아닌, 연속된 숫자들 속에서 소수를 골라내는 방법이다.
+
+특히 강의의 숫자 뒤집는 방법 기억하자.
+*/
+
+public class MySolution {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
