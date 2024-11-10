@@ -1,7 +1,8 @@
+package restudy.array.p0208;
 
 import java.util.*;
 
-public class Main {
+public class LecSolution {
     public int[] solution(int n, int[] arr) {
 
         int[] answer = new int[n];
@@ -21,7 +22,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Main T = new Main();
+        LecSolution T = new LecSolution();
         Scanner kb = new Scanner(System.in);
         int n = kb.nextInt();
         int[] arr= new int[n];
