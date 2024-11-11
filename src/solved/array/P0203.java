@@ -1,4 +1,4 @@
-package solved.string;
+package solved.array;
 
 import java.util.Scanner;
 
