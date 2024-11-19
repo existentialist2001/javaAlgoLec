@@ -1,4 +1,4 @@
-package solved.array;
+package restudy.array.p2010;
 
 import java.util.Scanner;
 
@@ -9,7 +9,7 @@ import java.util.Scanner;
 강의에서 4방향 뿐만 아니라 8방향(대각선)으로 갈 때도 있는데, 그때도 if문 8개 쓸 거냐고 반문했다.
 또한 boolean 변수와 여사건의 방식으로 접근해서 내 풀이보다 효율적인듯
 강의 풀이 방식 숙지하기*/
-public class P0210 {
+public class MySolution {
     public static void main(String[] args) {
 
         /*
