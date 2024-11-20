@@ -1,4 +1,9 @@
-import java.util.*;
+package solved.twoPointersAndSlidingwindow.p0301;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
 
 /*
 배열의 크기가 아무리 길어봤자 100이니까.. 어떤 걸 써도 성능 문제 없을 것 같은데..
@@ -11,7 +16,7 @@ import java.util.*;
 투 포인터 알고리즘 -> 정렬된 두 배열을 합쳐 새로운 정렬된 배열을 만들 때
 */
 
-public class Main {
+public class MySolution {
     public static void main(String[] args) {
 
         Scanner kb = new Scanner(System.in);
