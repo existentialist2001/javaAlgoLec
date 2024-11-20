@@ -1,51 +1,31 @@
 import java.util.*;
 
+//무언가를 판단하기 위한 변수는, 사용한 후 계속 초기값으로 초기화 해주어야 함
+
+
 public class Main {
     public static void main(String[] args) {
 
         Scanner kb = new Scanner(System.in);
-
-        //학생 수(4)
         int n = kb.nextInt();
-        //시험 수(3)
-        int m = kb.nextInt();
+        boolean isDecimal = true;
+        int cnt = 0;
 
-        int[][] tests = new int[m+1][n+1];
-        int[][] invertedTests = new int[n+1][m+1];
+        for (int i = 2; i <= n; i++) {
+            for (int j = 2; j <= Math.sqrt(i); j++) {
 
-        //입력
-        for (int i = 1; i <= m; i++) {
-            for (int j = 1; j <= n; j++) {
-                tests[i][j] = kb.nextInt();
-            }
-        }
+                if (i % j == 0) {
 
-        //데이터 전환
-        //인덱스가 등수임
-        for (int i = 1; i <= m; i++) {
-            for (int j = 1; j <= n; j++) {
-                //i가 시험, j가 등수
-                //학생 꺼냄
-                int student = tests[i][j];
-                invertedTests[student][i] = j;
-            }
-        }
-        int result = 0;
-
-        for (int[] i : invertedTests) {
-
-            int max = Integer.MIN_VALUE;
-
-            for (int j : i) {
-                if (j > max) {
-                    max = j;
+                    isDecimal = false;
+                    break;
                 }
             }
-            //System.out.println("max = " + max);
-            result += (4 - max);
-            //System.out.println("result = " + result);
+            if (isDecimal) {
+                //System.out.println("소수: " + i);
+                cnt++;
+            }
+            isDecimal = true;
         }
-
-        System.out.println(result - 4);
+        System.out.println(cnt);
     }
 }
