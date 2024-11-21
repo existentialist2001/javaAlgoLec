@@ -18,11 +18,13 @@ public class LecSolution {
 
         ArrayList<Integer> answer = new ArrayList<>();
 
+
         for (int i = 0; i < n; i++) {
 
             int tmp = arr[i];
             int res = 0;
 
+            //숫자 뒤집기
             while(tmp > 0) {
 
                 int t = tmp % 10;
@@ -30,6 +32,7 @@ public class LecSolution {
                 tmp = tmp / 10;
             }
 
+            //뒤집은 숫자의 소수 여부를 판별하여, 소수인 숫자만 넣음
             if (isPrime(res)) answer.add(res);
         }
         return answer;

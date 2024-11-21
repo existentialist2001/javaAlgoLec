@@ -11,6 +11,17 @@ import java.util.Scanner;
 특히 강의의 숫자 뒤집는 방법 기억하자.
 */
 
+/*
+2회독
+String str = "abc";
+int num = Integer.parseInt(str);
+이거 런타임 에러남, Integer.parseInt 함수는 "123"같은 숫자 문자열만 변환할 수 있음
+
+Integer.reverse 함수는 숫자의 비트를 뒤집는 함수이지, 숫자를 뒤집는 함수가 아님
+
+숫자 뒤집는 거 직접 해봄, 핵심은 10으로 나누는 것
+*/
+
 public class MySolution {
     public static void main(String[] args) {
 
@@ -28,7 +39,7 @@ public class MySolution {
             StringBuilder reversedStr = new StringBuilder(numbers[i]).reverse();
             Integer reversedNum = Integer.valueOf(reversedStr.toString());
 
-            if ((reversedNum > 1) & isPrime(reversedNum)) {
+            if ((reversedNum > 1) && isPrime(reversedNum)) {
                 System.out.print(reversedNum + " ");
             }
         }
