@@ -1,4 +1,4 @@
-package restudy.array.p2010;
+package restudy.array.p0210;
 
 import java.util.*;
 
@@ -21,6 +21,7 @@ public class LecSolution {
 
                     int nx = i + dx[k];
                     int ny = j + dy[k];
+                    //nx,ny가 인덱스를 초과하지 않으면서 그 봉우리 값이 크거나 같다면
                     if (nx >= 0 && nx < n && ny >= 0 && ny < n && arr[nx][ny] >= arr[i][j]) {
 
                         //한번이라도 같거나 큰 게 나오면, 그 지점은 더 이상 봉우리가 아니니 break
