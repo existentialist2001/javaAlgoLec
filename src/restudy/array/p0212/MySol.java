@@ -1,6 +1,15 @@
-import java.util.*;
+package restudy.array.p0212;
 
-public class Main {
+import java.util.Scanner;
+
+/*
+첫번째에는 스스로 못풀었는데, 2회독 때는 풀어냈다.
+보통 상태를 통해 문제를 해결할 때, true of false나 1과 -1을 가지고 많이했다.
+하지만 이 문제를 풀면서 둘 다 가로막혔고, 그래서 상태 변수를 -1과 0, 1 세 가지로 늘렸다.
+나름 여러 문제들 풀면서 습득한 노하우인데, 가로막힌다면 변수를 늘리는 걸 고민해봐야 한다.
+*/
+
+public class MySol {
     public static void main(String[] args) {
 
         Scanner kb = new Scanner(System.in);

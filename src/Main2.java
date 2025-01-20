@@ -1,51 +1,62 @@
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main2 {
     public static void main(String[] args) {
 
         Scanner kb = new Scanner(System.in);
 
-        int n = kb.nextInt();
-        int k = kb.nextInt();
-        int[] arr = new int[n];
-        for (int i = 0; i < n; i++) {
-            arr[i] = kb.nextInt();
+        String input = kb.nextLine();
+        char[] arr = input.toCharArray();
+
+        Queue<Character> queue = new LinkedList<>();
+
+        for (char c : arr) {
+            queue.add(c);
         }
 
-        HashMap<Integer,Integer> result = new HashMap<>();
-        //map 초기화
-        for (int i = 0; i < k; i++) {
-            result.put(i,0);
-        }
+        boolean result = true;
+        int cnt = 0;
+        boolean isMinusStream = false;
 
+        while (queue.size() > 0) {
 
-        HashSet<Integer> set = new HashSet<>();
-        int start = 0;
-        int lt = start;
-        int rt = lt + k - 1;
+            char c = queue.poll();
 
-        while (start <= n - k) {
+            if (c == '(') {
 
-            //set에 반영해주고, 각자 이동
-            set.add(arr[lt++]);
-            set.add(arr[rt--]);
+                cnt++;
 
-            //서로 엇갈린다면
-            if (lt > rt) {
+                if (isMinusStream) {
 
-                result.put(start,set.size());
-                set.clear();
-                start++;
-                lt = start;
-                rt = lt + k - 1;
+                    result = false;
+                    break;
+                }
+
+            }
+
+            else {
+
+                cnt--;
+
+                if (cnt < 0) {
+
+                    result = false;
+                    break;
+                }
+                else if (cnt > 0) {
+                    isMinusStream = true;
+                }
+                else {
+                    isMinusStream = false;
+                }
             }
         }
 
-        //출력
-        for (int x : result.keySet()) {
-            System.out.print(result.get(x) + " ");
+        if (result) {
+            System.out.println("YES");
+        }
+        else {
+            System.out.println("NO");
         }
     }
 }
