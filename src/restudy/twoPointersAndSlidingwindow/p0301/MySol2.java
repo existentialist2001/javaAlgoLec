@@ -1,6 +1,11 @@
-import java.util.*;
+package restudy.twoPointersAndSlidingwindow.p0301;
 
-public class Main {
+import java.util.ArrayList;
+import java.util.Scanner;
+
+//2회독 풀이
+
+public class MySol2 {
     public static void main(String[] args) {
 
         ArrayList<Integer> result = new ArrayList<>();
