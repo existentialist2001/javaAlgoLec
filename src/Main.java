@@ -5,34 +5,28 @@ public class Main {
 
         Scanner kb = new Scanner(System.in);
 
-        int max = Integer.MIN_VALUE;
-
         int n = kb.nextInt();
         int k = kb.nextInt();
 
-        int[] sales = new int[n];
+        Deque<Integer> deque = new LinkedList<>();
 
-        for (int i = 0; i < n; i++) {
-            sales[i] = kb.nextInt();
+        //실제 데이터 넣기, 연걸리스트니까 뒤에 넣어지는 거 맞음
+        for (int i = 1; i <= n; i++) {
+            deque.add(i);
         }
 
-        //전처리, 초기 윈도우 구성
-        int lt = 0;
-        int rt = lt;
-        int temp = 0;
+        int cnt = 0;
 
-        for (int i = 0; i < k; i++) {
-            temp += sales[rt++];
-        }
-        max = temp;
+        //뽑기 시작
+        while (deque.size() != 1) {
 
-        while (rt < sales.length) {
+                int prince = deque.removeFirst();
+                cnt++;
 
-            temp -= sales[lt++];
-            temp += sales[rt++];
-            if (temp > max) max = temp;
+                if (cnt == k) cnt = 0;
+                else deque.add(prince);
         }
 
-        System.out.print(max);
+        System.out.print(deque.poll());
     }
 }
