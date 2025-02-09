@@ -5,42 +5,44 @@ public class Main {
 
         Scanner kb = new Scanner(System.in);
 
-        int n = kb.nextInt();
+        String answer = "NO";
 
-        int[] arr = new int[n];
-        for (int i = 0; i < n; i++) {
-            arr[i] = i;
+        String essential = kb.nextLine();
+        String plan = kb.nextLine();
+
+        Deque<Character> eQueue = new LinkedList<>();
+        Deque<Character> pQueue = new LinkedList<>();
+
+        for (char c : essential.toCharArray()) {
+            eQueue.offer(c);
         }
 
-        //전처리
-        int lt = 1;
-        int rt = lt;
-        int sum = arr[lt];
-
-        int cnt = 0;
+        for (char c : plan.toCharArray()) {
+            pQueue.offer(c);
+        }
 
         //연산
-        while (true) {
+        while (!pQueue.isEmpty()) {
 
-            if (sum > n) {
-                sum -= arr[lt++];
-            }
-            else if (sum < n) {
+            char c = pQueue.poll();
 
-                rt++;
-                if (rt >= arr.length) break;
-                sum += arr[rt];
-            }
-            else {
+            if (eQueue.contains(c)) {
+                if (eQueue.getFirst() == c) {
+                    eQueue.poll();
 
-                cnt++;
-                rt++;
-                if (rt >= arr.length) break;
-                sum += arr[rt];
-                sum -= arr[lt++];
+                    if (eQueue.isEmpty()) {
+
+                        answer = "YES";
+                        break;
+                    }
+                }
+                else {
+
+                    answer = "NO";
+                    break;
+                }
             }
         }
-
-        System.out.print(cnt);
+        System.out.print(answer);
     }
 }
