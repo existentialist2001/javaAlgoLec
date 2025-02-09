@@ -1,6 +1,8 @@
-import java.util.*;
+package solved.twoPointersAndSlidingwindow.p0305;
 
-public class Main {
+import java.util.Scanner;
+
+public class MySol2 {
     public static void main(String[] args) {
 
         Scanner kb = new Scanner(System.in);

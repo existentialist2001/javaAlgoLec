@@ -16,6 +16,7 @@ public class LecSolution1 {
 
         int answer = 0, sum = 0;
         int m = n / 2 + 1;
+
         int[] arr = new int[m];
         for (int i = 0; i < m; i++) arr[i] = i + 1;
         int lt = 0;
@@ -23,8 +24,8 @@ public class LecSolution1 {
         for (int rt = 0; rt < m; rt++) {
 
             sum += arr[rt];
-
             if (sum == n) answer++;
+
             while (sum >= n) {
 
                 //같거나 크다면(가장 작은 것을 빼줘야 그나마 가능성이 있으니) 왼쪽에서 한 칸 이동
@@ -32,7 +33,6 @@ public class LecSolution1 {
                 //왼쪽에서 한 칸 이동해주었는데 같다면 카운팅
                 if (sum == n) answer++;
             }
-
             //작다면 다시 위로 올라가서 하나 더 더해주고 검사
         }
         return answer;
