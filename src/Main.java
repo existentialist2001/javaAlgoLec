@@ -5,44 +5,47 @@ public class Main {
 
         Scanner kb = new Scanner(System.in);
 
-        String answer = "NO";
+        int n = kb.nextInt();
+        int m = kb.nextInt();
 
-        String essential = kb.nextLine();
-        String plan = kb.nextLine();
+        Deque<Integer> waitList = new LinkedList<>();
 
-        Deque<Character> eQueue = new LinkedList<>();
-        Deque<Character> pQueue = new LinkedList<>();
+        int target = 0;
 
-        for (char c : essential.toCharArray()) {
-            eQueue.offer(c);
-        }
+        for (int i = 0; i < n; i++) {
 
-        for (char c : plan.toCharArray()) {
-            pQueue.offer(c);
-        }
+            int input = kb.nextInt();
+            waitList.offer(input);
 
-        //연산
-        while (!pQueue.isEmpty()) {
-
-            char c = pQueue.poll();
-
-            if (eQueue.contains(c)) {
-                if (eQueue.getFirst() == c) {
-                    eQueue.poll();
-
-                    if (eQueue.isEmpty()) {
-
-                        answer = "YES";
-                        break;
-                    }
-                }
-                else {
-
-                    answer = "NO";
-                    break;
-                }
+            if (i == m) {
+                target = input;
             }
         }
-        System.out.print(answer);
+
+        int max = 0;
+        int cnt = 0;
+
+        while (!waitList.isEmpty()) {
+
+            int p = waitList.poll();
+            max = p;
+
+            //우선순위 검사
+            for (int anotherP : waitList) {
+
+                if (anotherP > p) {
+                    max = anotherP;
+                }
+            }
+
+            //최종 검사
+            if (max == p) {
+
+                cnt++;
+                if (p == target) break;
+            }
+            else waitList.offer(p);
+        }
+        System.out.println(cnt);
     }
 }

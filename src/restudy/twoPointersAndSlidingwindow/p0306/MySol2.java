@@ -1,6 +1,8 @@
-import java.util.*;
+package restudy.twoPointersAndSlidingwindow.p0306;
 
-public class Main2 {
+import java.util.Scanner;
+
+public class MySol2 {
     public static void main(String[] args) {
 
         Scanner kb = new Scanner(System.in);
