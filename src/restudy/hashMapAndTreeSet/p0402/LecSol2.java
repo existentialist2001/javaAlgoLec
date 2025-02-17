@@ -1,6 +1,9 @@
-import java.util.*;
+package restudy.hashMapAndTreeSet.p0402;
 
-public class Main {
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class LecSol2 {
     public static void main(String[] args) {
 
         Scanner kb = new Scanner(System.in);
