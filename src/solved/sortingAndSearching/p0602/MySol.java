@@ -1,6 +1,13 @@
-import java.util.*;
+package solved.sortingAndSearching.p0602;
 
-public class Main {
+import java.util.Scanner;
+
+/*
+버블 정렬 - 거품(최대값 or 최소값)이 위로 올라가는(제일 뒤로 배치되는) 모양이라서 버블 정렬이라고 한다, 이렇게 이해함
+버블 정렬의 시간 복잡도는 O(n^2)임, 점점 연산횟수가 감소한다고 하더라도 O(n^2)임 직접 계산해봤으니 의심X
+*/
+
+public class MySol {
     public static void main(String[] args) {
 
         Scanner kb = new Scanner(System.in);
